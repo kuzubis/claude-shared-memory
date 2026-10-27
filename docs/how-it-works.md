@@ -25,7 +25,7 @@ Claude Code (on your computer), claude.ai chat (browser, phone) and Cowork each 
 - **Code → chat.** After every finished task the `task-summary` skill updates `memory/MEMORY.md` (≤300 lines) and uploads it to Drive as a fresh Google Doc `MEMORY`. The previous one is moved to `archive`.
 - **Chat → Code.** At the start of a conversation the `shared-memory` skill reads `MEMORY`. At the end of a substantial one it creates **one new Google Doc** in `INBOX` with a short structured summary.
 - **Import.** At the start of each Claude Code session and in `task-summary`, Claude Code lists `INBOX`, moves every entry into the journal, project context and memory, prefixes the doc title with ✅ and moves it to `archive`. Nothing is ever deleted.
-- **Snapshots in skills.** `my-profile` and `my-company` are compact snapshots used when Drive is not reachable.
+- **Snapshots in skills (optional).** Profile and company skills from [claude-deep-context](https://github.com/kuzubis/claude-deep-context) are compact snapshots used when Drive is not reachable.
 - **Backup (optional).** `sync/sync.ps1` pushes the whole working folder to a private GitHub repo and mirrors it to Google Drive every 30 minutes, including Claude Code's own memory (`memory/code/`).
 
 ## Limitations (found the hard way)

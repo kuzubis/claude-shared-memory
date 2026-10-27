@@ -18,18 +18,20 @@ Details, diagram and the limitations we hit: [docs/how-it-works.md](docs/how-it-
 ## What's inside
 | Folder | What |
 |---|---|
-| `skills/` | claude.ai skills: `shared-memory` (the protocol), `my-profile` and `my-company` (templates) |
+| `skills/` | the claude.ai skill `shared-memory` (the protocol) |
 | `claude-code/` | goes into your Claude Code folder: `CLAUDE.md` template, `task-summary` skill, journal and memory templates |
 | `sync/` | optional Windows auto-backup every 30 min: private GitHub repo + Google Drive mirror (`install-sync.ps1` registers it in Task Scheduler) |
-| `interview/` | 14 blocks of questions so Claude can interview you and build your profile and company context |
 | `tools/` | `build-skill-zips.py` — packs skills into zips claude.ai accepts |
 | `docs/` | [how it works](docs/how-it-works.md), [setup](docs/setup.md) |
 
 ## Quick start
 1. Read [docs/setup.md](docs/setup.md) (≈30 min). Or let Claude Code do most of it: open it in an empty folder and paste
    `Set me up with the claude-shared-memory kit from https://github.com/kuzubis/claude-shared-memory following its docs/setup.md. Ask me before anything that creates accounts, repos or scheduled tasks.`
-2. In claude.ai: upload the three skill zips, turn on the Google Drive connector, paste one paragraph into personal preferences.
+2. In claude.ai: upload the `shared-memory` skill zip, turn on the Google Drive connector, paste one paragraph into personal preferences.
 3. Test: ask a new chat something only your memory knows.
+
+## Fill the memory from day one
+An empty memory fills up as you work. To start with a full one, run the interview from the companion kit **[claude-deep-context](https://github.com/kuzubis/claude-deep-context)**: Claude asks you 14 blocks of questions and builds `my-profile` and `my-company` skills — they also serve as the fallback when Drive is unreachable.
 
 ## Requirements
 - claude.ai plan with Skills and Connectors; Claude Code.

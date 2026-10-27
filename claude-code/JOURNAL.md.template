@@ -11,4 +11,4 @@ Newest entries on top. The format is described in `.claude/skills/task-summary/S
 **Done:** Created the Google Drive folder Claude-memory (MEMORY, INBOX, archive), uploaded the skills to claude.ai, filled CLAUDE.md.
 **Decisions:** one Google Doc per chat summary in INBOX, because the Drive connector cannot append to an existing doc.
 **Files:** CLAUDE.md, memory/MEMORY.md, .claude/skills/task-summary/SKILL.md
-**Next:** run the interview (interview/questions.md) to fill the profile and company context.
+**Next:** optionally run the interview from https://github.com/kuzubis/claude-deep-context to fill the profile and company context.

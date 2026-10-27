@@ -16,7 +16,7 @@ You need:
 1. Pick a folder you will always open in Claude Code, e.g. `C:\Work\Claude`.
 2. Copy into it from this repository:
    - everything inside `claude-code/` (so `CLAUDE.md.template`, `JOURNAL.md.template`, `.claude\`, `memory\` land in the root);
-   - the folders `skills\` → `memory\skills\`, `sync\` → `sync\`, `interview\` → `interview\`, `tools\` → `tools\`.
+   - the folders `skills\` → `memory\skills\`, `sync\` → `sync\`, `tools\` → `tools\`.
 3. Rename `CLAUDE.md.template` → `CLAUDE.md`, `JOURNAL.md.template` → `JOURNAL.md`, `memory\MEMORY.md.template` → `memory\MEMORY.md`. Replace `<YOUR NAME>`, `<LANGUAGE>`, `<WORK_FOLDER>` in them.
 
 ## 2. Google Drive folders
@@ -47,16 +47,18 @@ powershell -ExecutionPolicy Bypass -File .\sync\install-sync.ps1 -WorkFolder 'C:
 ```
 Add `-WhatIf` to preview. If Drive for desktop is installed, the folder is mirrored to `My Drive\My-Claude` (change with `-DriveCopyName`; give `-DriveFolder 'G:\My Drive'` if it isn't found automatically). Check `sync\sync-log.txt` — it should say `GitHub: OK` and `Google Drive: OK`.
 
-## 5. Fill your profile and company context
-Run the interview: open `interview/questions.md` and paste the prompt from it into Claude Code. At the end ask Claude to turn the results into `memory/skills/my-profile/SKILL.md` and `memory/skills/my-company/SKILL.md`. Then build the zips:
+## 5. Build the skill zip
+(Optional first: fill your profile and company context with the interview from [claude-deep-context](https://github.com/kuzubis/claude-deep-context) — it gives you `my-profile` and `my-company` skills.)
+
+Build the `shared-memory` zip:
 ```powershell
 python tools\build-skill-zips.py memory\skills
 ```
 
 ## 6. Upload the skills to claude.ai
 1. claude.ai → your name (bottom left) → **Settings** → **Capabilities** → **Skills**.
-2. **Upload skill** → choose `memory\skills\shared-memory.zip`, then `my-profile.zip`, `my-company.zip`. If an older skill with the same name exists, delete it first.
-3. Make sure all three are switched on. Cowork picks them up automatically.
+2. **Upload skill** → choose `memory\skills\shared-memory.zip` (and the profile/company zips if you made them). If an older skill with the same name exists, delete it first.
+3. Make sure they are switched on. Cowork picks them up automatically.
 
 ## 7. Connect Google Drive in chat
 In a new claude.ai chat: **+** next to the input → **Connectors** → turn on **Google Drive**. Sign in with **the same Google account** that holds `Claude-memory`.

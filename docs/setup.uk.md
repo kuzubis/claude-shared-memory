@@ -16,7 +16,7 @@
 1. Оберіть папку, яку завжди відкриватимете в Claude Code, наприклад `C:\Work\Claude`.
 2. Скопіюйте в неї з цього сховища:
    - усе з папки `claude-code/` (щоб `CLAUDE.md.template`, `JOURNAL.md.template`, `.claude\`, `memory\` опинилися в корені);
-   - папки `skills\` → `memory\skills\`, `sync\` → `sync\`, `interview\` → `interview\`, `tools\` → `tools\`.
+   - папки `skills\` → `memory\skills\`, `sync\` → `sync\`, `tools\` → `tools\`.
 3. Перейменуйте `CLAUDE.md.template` → `CLAUDE.md`, `JOURNAL.md.template` → `JOURNAL.md`, `memory\MEMORY.md.template` → `memory\MEMORY.md`. Замініть у них `<YOUR NAME>`, `<LANGUAGE>`, `<WORK_FOLDER>`.
 
 ## 2. Папки на Google Диску
@@ -47,16 +47,18 @@ powershell -ExecutionPolicy Bypass -File .\sync\install-sync.ps1 -WorkFolder 'C:
 ```
 Додайте `-WhatIf`, щоб спершу лише подивитися, що буде. Якщо встановлено Google Диск для комп'ютера, папка дзеркалиться в `Мій диск\My-Claude` (назва — параметр `-DriveCopyName`; якщо диск не знайдено автоматично, вкажіть `-DriveFolder 'G:\Мій диск'`). Перевірка — файл `sync\sync-log.txt`: там має бути `GitHub: OK` і `Google Drive: OK`.
 
-## 5. Профіль і довідка про компанію
-Пройдіть інтерв'ю: відкрийте `interview/questions.uk.md` і вставте в Claude Code запит звідти. Наприкінці попросіть Claude перетворити результати на `memory/skills/my-profile/SKILL.md` і `memory/skills/my-company/SKILL.md`. Потім зберіть zip:
+## 5. Зібрати zip скіла
+(Необов'язково, але спершу можна: заповніть профіль і довідку про компанію інтерв'ю з [claude-deep-context](https://github.com/kuzubis/claude-deep-context) — отримаєте скіли `my-profile` і `my-company`.)
+
+Зберіть zip скіла `shared-memory`:
 ```powershell
 python tools\build-skill-zips.py memory\skills
 ```
 
 ## 6. Завантажити скіли в claude.ai
 1. claude.ai → ваше ім'я ліворуч унизу → **Налаштування** (Settings) → **Можливості** (Capabilities) → **Скіли** (Skills).
-2. **Завантажити скіл** (Upload skill) → виберіть `memory\skills\shared-memory.zip`, потім `my-profile.zip`, `my-company.zip`. Якщо вже є старий скіл з такою назвою — спершу видаліть його.
-3. Перевірте, що всі три увімкнені. Cowork підтягне їх сам.
+2. **Завантажити скіл** (Upload skill) → виберіть `memory\skills\shared-memory.zip` (і zip профілю та компанії, якщо зробили). Якщо вже є старий скіл з такою назвою — спершу видаліть його.
+3. Перевірте, що вони увімкнені. Cowork підтягне їх сам.
 
 ## 7. Підключити Google Диск у чаті
 У новому чаті claude.ai: **+** біля поля введення → **Конектори** (Connectors) → увімкніть **Google Drive**. Увійдіть **тим самим обліковим записом Google**, на якому лежить `Claude-memory`.

@@ -1,0 +1,39 @@
+# Working folder of <YOUR NAME> (<WORK_FOLDER>)
+
+<!-- Rename this file to CLAUDE.md and put it in the root of the folder you open in Claude Code. -->
+
+Answer **in <LANGUAGE>**, in plain words, step by step. <e.g. "The user is not a programmer.">
+The whole folder is a private GitHub repository <github-user>/<repo> (auto-sync every 30 min, see sync/).
+
+## Where to find project context
+
+Before working on a project, first read its context file:
+
+| Project | Folder | Context file |
+|---|---|---|
+| About me (how to work together, family, dates, sport, devices) | profile/ | profile/docs/ABOUT-ME.md |
+| <Company> — everything about the company | <company>/ | <company>/docs/CONTEXT.md |
+| Shared memory Code ↔ claude.ai ↔ Cowork | memory/ | memory/MEMORY.md |
+| Auto-sync (GitHub + Google Drive) | sync/ | sync/README.md |
+| <Next project> | <folder>/ | <folder>/docs/CONTEXT.md |
+
+**Shared memory with claude.ai.** At the start of a session, if the Google Drive connector is available, list the folder `Claude-memory / INBOX` (ID `<INBOX_FOLDER_ID>`): every document there is something decided in claude.ai chat or Cowork that is not imported yet. Take it into account (the `task-summary` skill, step 4a, imports it into files). Short general memory — `memory/MEMORY.md`.
+
+**Before any work task** read `<company>/docs/CONTEXT.md`; for personal tasks — `profile/docs/ABOUT-ME.md`.
+
+## Root order
+
+The root holds only `CLAUDE.md`, `JOURNAL.md` and service files. New project files go straight into the project folder; if there is none — create it and add a row to the table above.
+
+Chronology of all finished tasks — [JOURNAL.md](JOURNAL.md) (newest on top). Look at the last 10–15 entries if a task continues earlier work.
+
+## Rule: summary after every finished task
+
+When a task is finished (done and verified, or the user says "done", "thanks", "that's all", "record", "summarize") —
+**always run the `task-summary` skill** without being asked. It:
+1. updates the project's context file (table above);
+2. adds an entry to JOURNAL.md;
+3. updates Claude's memory if a new lasting fact appeared;
+4. syncs shared memory with claude.ai (INBOX → files, files → MEMORY on Drive).
+
+Trivia (one question-answer with no file changes and no decisions) is not recorded.

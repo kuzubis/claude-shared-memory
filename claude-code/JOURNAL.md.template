@@ -1,0 +1,14 @@
+# Journal of finished tasks
+
+<!-- Rename to JOURNAL.md and put it in the root of the working folder. -->
+
+Newest entries on top. The format is described in `.claude/skills/task-summary/SKILL.md`.
+
+---
+
+## YYYY-MM-DD — Example: shared memory set up
+**Project:** general (memory/)
+**Done:** Created the Google Drive folder Claude-memory (MEMORY, INBOX, archive), uploaded the skills to claude.ai, filled CLAUDE.md.
+**Decisions:** one Google Doc per chat summary in INBOX, because the Drive connector cannot append to an existing doc.
+**Files:** CLAUDE.md, memory/MEMORY.md, .claude/skills/task-summary/SKILL.md
+**Next:** run the interview (interview/questions.md) to fill the profile and company context.

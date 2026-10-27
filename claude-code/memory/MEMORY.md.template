@@ -1,0 +1,48 @@
+# Claude MEMORY — shared by Claude Code, claude.ai chat and Cowork
+
+<!--
+  Rename to memory/MEMORY.md in the working folder. Keep it ≤300 lines.
+  Claude Code updates it after every finished task (skill task-summary) and uploads a copy
+  to Google Drive as the doc "Claude-memory / MEMORY". Never put passwords, card numbers
+  or passport data here: this file goes to GitHub and Google Drive.
+-->
+
+> Snapshot as of **<DATE>**. Single source of truth — the working folder `<WORK_FOLDER>` on the user's computer (copy on Google Drive and GitHub).
+> Updated by Claude Code after every finished task. Copy — Google Doc **"Claude-memory / MEMORY"**.
+> Whatever was decided in claude.ai chat — drop it as a separate doc into **"Claude-memory / INBOX"**; Claude Code will import it here.
+
+## 1. Who the user is
+- <Name, born, city, role, company, since when>
+- <Background, languages>
+- <Technical level, language of answers>
+- <Contacts that Claude may use (work e-mail, phone) — only if the user agrees>
+- <Hobbies; goals for 1–3 years>
+
+## 2. Working rules (mandatory)
+1. <Clarifying questions or assumptions>
+2. <Only after an explicit "yes": …>
+3. <Accuracy: sources, primary documents, totals must add up, fact / calculation / assumption>
+4. <Paid services: …>
+5. <Formats: spreadsheets, presentations, letters>
+6. <Where to send results>
+7. <Schedule, quiet hours>
+
+## 3. Family (dates for reminders)
+- <…>
+
+## 4. Sport / health
+- <…>
+
+## 5. Work — short (details: `<company>/docs/CONTEXT.md`)
+- <Main asset, current state, strategy>
+- <Key people and abbreviations>
+- <Current projects>
+
+## 6. Projects with Claude (details: table in `CLAUDE.md`)
+- <Priority projects; servers; bots>
+
+## 7. Open questions
+- <…>
+
+## 8. Recent finished tasks (full list — `JOURNAL.md`)
+- <DD.MM — task>

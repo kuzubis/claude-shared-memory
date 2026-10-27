@@ -1,0 +1,4 @@
+# built skill archives (make them with tools/build-skill-zips.py)
+*.zip
+__pycache__/
+sync/sync-log.txt
